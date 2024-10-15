@@ -46,7 +46,7 @@ def copy_files(src, dst):
             # Sprawdzenie, czy plik już istnieje, jeśli tak - dodajemy timestamp do nazwy
             if os.path.exists(dst_file):
                 base, ext = os.path.splitext(file)
-                timestamp = time.strftime("%Y%m%d_%H%M%S", time.localtime())
+                timestamp = time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())
                 dst_file = os.path.join(destination_path, f"{base}_{timestamp}{ext}")
 
             shutil.copy2(src_file, dst_file)  # Kopiowanie pliku z zachowaniem metadanych
